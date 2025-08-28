@@ -1,28 +1,57 @@
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./HeroPage.css";
 
-export default function HeroPage() {
+const HeroPage = () => {
   const navigate = useNavigate();
 
+  const handleGetStarted = () => {
+    navigate("/interests");
+  };
+
+  useEffect(() => {
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    const handleTouchStart = (e) => {
+      touchStartY = e.changedTouches[0].screenY;
+    };
+
+    const handleTouchEnd = (e) => {
+      touchEndY = e.changedTouches[0].screenY;
+      if (touchStartY - touchEndY > 100) {
+        // user swiped up
+        navigate("/interests");
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [navigate]);
+
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gradient-to-b from-indigo-500 to-purple-600 text-white">
-      <div className="flex flex-col items-center text-center px-6">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-wide drop-shadow-sm">
-          EVENTSYNC
-        </h1>
+    <div className="hero-container">
+      {/* Mesh Gradient Blobs */}
+      <div className="blob blob-top-left"></div>
+      <div className="blob blob-bottom-right"></div>
 
-        <img
-          src="/assets/handshake.svg"
-          alt="Two people shaking hands"
-          className="w-48 h-48 mt-8"
-        />
+      {/* Brand Name */}
+      <h1 className="hero-title">EVENTSYNC</h1>
 
-        <button
-          onClick={() => navigate("/interests")}
-          className="mt-10 px-6 py-3 bg-white text-indigo-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition"
-        >
-          Get Started
-        </button>
-      </div>
+      {/* SVG Image */}
+      <img src="/handshake.svg" alt="Handshake" className="hero-image" />
+
+      {/* CTA Button */}
+      <button className="get-started-btn" onClick={handleGetStarted}>
+        Get Started
+      </button>
     </div>
   );
-}
+};
+
+export default HeroPage;
