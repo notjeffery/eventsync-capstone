@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import "./InterestPage.css";
+import "../styles/InterestPage.css";
 
 const InterestPage = () => {
-  const [selectedTab, setSelectedTab] = useState("Artistes"); // default tab
+  const [selectedTab, setSelectedTab] = useState("Artistes"); 
   const [selectedInterests, setSelectedInterests] = useState([]);
 
   const artistes = ["Wizkid", "Asake", "Roddy Ricch", "Rodwave", "Fola", "ODUMODUBLVCK", "Seyi Vibez", "Drake", "Future", "Tems", "Davido", "Burna Boy"];
