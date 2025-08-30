@@ -32,8 +32,10 @@ export default function FeedPage() {
         });
 
         merged.sort((a, b) => {
-          const aDate = a?.dates?.start?.dateTime || a?.dates?.start?.localDate || "";
-          const bDate = b?.dates?.start?.dateTime || b?.dates?.start?.localDate || "";
+          const aDate =
+            a?.dates?.start?.dateTime || a?.dates?.start?.localDate || "";
+          const bDate =
+            b?.dates?.start?.dateTime || b?.dates?.start?.localDate || "";
           return aDate.localeCompare(bDate);
         });
 
@@ -60,9 +62,9 @@ export default function FeedPage() {
 
       {/* Tabs */}
       <div className="feed-tabs">
-        <span className="tab active">For You</span>
         <span className="tab">Explore</span>
         <span className="tab">Following</span>
+        <span className="tab active">For You</span>
       </div>
 
       <div className="feed-events">

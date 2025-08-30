@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./HeroPage.css";
+import "../styles/HeroPage.css";
 
 const HeroPage = () => {
   const navigate = useNavigate();

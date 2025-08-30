@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "../styles/InterestPage.css";
 
 const InterestPage = () => {
-  const [selectedTab, setSelectedTab] = useState("Artistes"); 
+  const [selectedTab, setSelectedTab] = useState("Artistes");
   const [selectedInterests, setSelectedInterests] = useState([]);
+  const navigate = useNavigate();
 
-  const artistes = ["Wizkid", "Asake", "Roddy Ricch", "Rodwave", "Fola", "ODUMODUBLVCK", "Seyi Vibez", "Drake", "Future", "Tems", "Davido", "Burna Boy"];
-  const categories = ["Concerts", "Festivals", "Conferences", "Workshops", "Parties", "Meetups", "Art", "Football", "Album Listenings", "Rave", "Block Party", "Movies"];
+  const artistes = [
+    "Wizkid", "Asake", "Roddy Ricch", "Rodwave", "Fola", "ODUMODUBLVCK",
+    "Seyi Vibez", "Drake", "Future", "Tems", "Davido", "Burna Boy"
+  ];
+  const categories = [
+    "Concerts", "Festivals", "Conferences", "Workshops", "Parties", "Meetups",
+    "Art", "Football", "Album Listenings", "Rave", "Block Party", "Movies"
+  ];
 
   const handleToggle = (item) => {
     setSelectedInterests((prev) =>
@@ -16,6 +24,15 @@ const InterestPage = () => {
   };
 
   const interestsToDisplay = selectedTab === "Artistes" ? artistes : categories;
+
+  
+  const handleSkip = () => {
+    navigate("/feed");
+  };
+
+  const handleNext = () => {
+    navigate("/feed");
+  };
 
   return (
     <div className="interest-container">
@@ -48,10 +65,7 @@ const InterestPage = () => {
       />
 
       {/* Cards */}
-      <motion.div
-        layout
-        className="cards-container"
-      >
+      <motion.div layout className="cards-container">
         {interestsToDisplay.map((item, index) => (
           <motion.div
             key={item}
@@ -68,10 +82,12 @@ const InterestPage = () => {
 
       {/* Navigation buttons */}
       <div className="navigation">
-        <button className="skip-btn">Skip &gt;&gt;</button>
+        <button className="skip-btn" onClick={handleSkip}>
+          Skip &gt;&gt;
+        </button>
         <button
           className={`next-btn ${selectedInterests.length > 0 ? "highlight" : ""}`}
-          onClick={() => alert("Proceeding to feed...")}
+          onClick={handleNext}
         >
           Next &gt;
         </button>

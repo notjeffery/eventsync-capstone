@@ -1,4 +1,3 @@
-// src/pages/OnboardingPage.jsx
 import { useNavigate } from "react-router-dom";
 
 const OnboardingPage = () => {

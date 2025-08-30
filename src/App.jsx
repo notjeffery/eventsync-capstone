@@ -1,18 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HeroPage from "./pages/HeroPage";
+import InterestPage from "./pages/InterestPage";
+import FeedPage from "./pages/FeedPage";
 
-import InterestPage from "./pages/InterestPage.jsx";
-import FeedPage from "./pages/FeedPage.jsx"; // ✅ explicit .jsx import
-
-export default function App() {
+function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<InterestPage />} />
+        {/* Landing page */}
+        <Route path="/" element={<HeroPage />} />
+
+        {/* Interests selection */}
+        <Route path="/interests" element={<InterestPage />} />
+
+        {/* Event feed */}
         <Route path="/feed" element={<FeedPage />} />
-        {/* if someone hits an unknown route, send them to /feed for now */}
-        <Route path="*" element={<Navigate to="/feed" replace />} />
       </Routes>
     </Router>
   );
 }
+
+export default App;
