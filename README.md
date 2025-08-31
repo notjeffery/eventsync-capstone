@@ -50,4 +50,6 @@ The project is being built step by step, with a focus on **mobile-first design**
 ## Demo / Presentation
 - Walkthrough of Hero → Interest → Event Feed pages  
 - Demonstration of responsiveness and animations  
-- Explanation of roadmap and future milestones  
+- Explanation of roadmap and future milestones 
+- You can view the live deployed version of EventSync here: https://eventsync-two.vercel.app
+. This deployment makes it easy to explore the current features, including the Hero Page with its gradient mesh background and the Interest Page with artist and category selection, directly in your browser. 
