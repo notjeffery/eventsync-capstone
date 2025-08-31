@@ -1,49 +1,53 @@
-EventSync (Capstone Project)
+# EventSync (Capstone Project)
+
 ## Description
+EventSync is an events discovery and coordination app that helps users find events near them, track their favorite artists, and plan attendance with friends.  
 
-EventSync is an events discovery and coordination app that helps users find events near them, track their favorite artists, and plan attendance with friends.
+The project is being built step by step, with a focus on **mobile-first design**, responsive UI, and a smooth user flow from onboarding to event exploration.
 
-This project is being built step by step.
-
-Currently, the Hero Page and Interest Page have been implemented.
+---
 
 ## Current Progress
-Hero Page
 
-Gradient mesh background with floating effect
+### Hero Page
+- Gradient mesh background with floating effect  
+- Branding (EventSync logo/title) with fade-in animation  
+- Call-to-action button with hover animation  
+- Fully responsive (mobile-first)  
 
-Branding (EventSync logo/title) with fade-in animation
+### Interest Page
+- Artist selection using stacked card design  
+- Event category options (Sports, Music, Tech, etc.) remain as selectable buttons  
+- Improved spacing between Artist and Event Category sections for better readability  
+- Selection feedback with color change when an item is selected  
+- “Next” button always active (choices optional — algorithm adapts to user)  
 
-Call-to-action button with hover animation
+### Event Feed Page
+- Fetches live events via **Ticketmaster API**  
+- Displays events dynamically in a card layout  
+- Responsive design for different screen sizes  
+- Error handling for missing/empty API results  
 
-Responsive (mobile-first)
+---
 
-Interest Page
+## Planned Features (Future Milestones)
+- Splash screen with branding  
+- Complete onboarding flow  
+- Expanded event feed tabs (**Explore, Following, For You**)  
+- Event details with interactions (RSVP, Save, Share)  
+- Friends & group coordination tools (invite friends, track attendance)  
 
-Artist selection using stacked card design
-
-Event category options (Sports, Music, Tech, etc.) remain as selectable buttons
-
-Improved spacing between Artist and Event Category sections for better readability
-
-Selection feedback with color change when an item is selected
-
-“Next” button is always active (choices optional — the algorithm adapts)
-
-## Planned Features (future milestones)
-
-Splash screen with branding
-
-Onboarding flow
-
-Event feed (Explore, Following, For You)
-
-Event details with interactions
-
-Friends & group coordination
+---
 
 ## Tech Stack
+- **Frontend:** React (Vite)  
+- **Styling:** Tailwind CSS + custom CSS animations + CSS Modules  
+- **API:** Ticketmaster Discovery API (future: local APIs like TixAfrica)  
+- **Version Control:** Git & GitHub  
 
-Frontend: React (Vite)
+---
 
-Styling: Tailwind CSS + custom CSS animations + CSS Modules
+## Demo / Presentation
+- Walkthrough of Hero → Interest → Event Feed pages  
+- Demonstration of responsiveness and animations  
+- Explanation of roadmap and future milestones  
